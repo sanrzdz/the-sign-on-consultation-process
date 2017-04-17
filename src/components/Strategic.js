@@ -18,8 +18,8 @@ class Strategic extends Component {
     return (
       <div className="App-content">
         <h1>Is the oportunity strategic?</h1>
-        <Link to="/roles-involved"><Button raised primary data-strategic={true} className="btn" onTouchTap={this.setStrategicOportunity}>Yes</Button></Link>
-        <Link to="/value-level"><Button raised primary data-strategic={false} className="btn" onTouchTap={this.setStrategicOportunity}>No</Button></Link>
+        <Link to="/the-sign-on-consultation-process/roles-involved"><Button raised primary data-strategic={true} className="btn" onTouchTap={this.setStrategicOportunity}>Yes</Button></Link>
+        <Link to="/the-sign-on-consultation-process/value-level"><Button raised primary data-strategic={false} className="btn" onTouchTap={this.setStrategicOportunity}>No</Button></Link>
       </div>
     );
   }

@@ -33,9 +33,9 @@ class Complexity extends Component {
         <h1>What is the complexity of the oportunity?</h1>
         <Layout container justify="center" align="stretch" gutter={0}>
           <Layout item sm={8} xs={10} >
-            <Link to="/roles-involved"><Button raised primary data-complexity="high" className="btn full-width" onTouchTap={this.setComplexityLevel}>High</Button></Link>
-            <Link to="/roles-involved"><Button raised primary data-complexity="medium" className="btn full-width" onTouchTap={this.setComplexityLevel}>Medium</Button></Link>
-            <Link to="/roles-involved"><Button raised primary data-complexity="low" className="btn full-width" onTouchTap={this.setComplexityLevel}>Low</Button></Link>
+            <Link to="/the-sign-on-consultation-process/roles-involved"><Button raised primary data-complexity="high" className="btn full-width" onTouchTap={this.setComplexityLevel}>High</Button></Link>
+            <Link to="/the-sign-on-consultation-process/roles-involved"><Button raised primary data-complexity="medium" className="btn full-width" onTouchTap={this.setComplexityLevel}>Medium</Button></Link>
+            <Link to="/the-sign-on-consultation-process/roles-involved"><Button raised primary data-complexity="low" className="btn full-width" onTouchTap={this.setComplexityLevel}>Low</Button></Link>
           </Layout>
         </Layout>  
       </div>
