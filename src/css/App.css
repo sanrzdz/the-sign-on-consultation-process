@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+.App {
+	display: flex;
+  min-height: 90vh;
+  flex-direction: column;
+	margin-top: 3vh;
+	margin-bottom: 7vh;
+}
+
+.paper-wrapper {
+	position: relative;
+}
+.paper-wrapper .appBar-style {
+	position: relative; 
+	text-align: center;
+}
+.App-content {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+	flex: 1;  
+}
+
+.App-content h1 {
+	font-size: 1.6em;
+	margin-top: 15vh;
+}
+.App-content.Roles h1 {
+	font-size: 1.6em;
+	margin-top: 5vh;
+}
+
+.App-content .btn {
+	margin: 2em 1em;
+}
+
+.App-content .btn.full-width {
+	width: 100%;
+	margin: 0.5em 0;
+}
+
+.App-content .list {
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	text-align: left;
+	padding: 0;
+	margin-bottom: 1em;
+}
+
+.App-content .list .big-avatar, .App-content .list .big-avatar svg {
+	width: 2em;
+	height: 2em;
+}
+
+.App-content a {
+	text-decoration: none;
+}
+
+
+
+.footer-wrapper {
+/*	display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;	*/
+}
+
+footer p {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer img {
+    height: 37px;
+    margin-left: 15px;
+}
+
+@media (max-width: 600px) {
+	.App {
+		min-height: 100vh;
+		margin: 0;		
+	}
+	.footer-wrapper {
+    	bottom: 0;
+    }
+}
