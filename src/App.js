@@ -98,7 +98,7 @@ class App extends Component {
                 <Router>
                   <Switch>
                     <Route exact path="/" component={Welcome} />
-                    <Route path="the-sign-on-consultation-process/end-user-involved" render={ () =>
+                    <Route path="/end-user-involved" render={ () =>
                       <EndUser HandleEndUser={this.handleEndUserInvolved} />
                     } />
                     <Route path="/is-strategic-oportunity" render={ () =>
