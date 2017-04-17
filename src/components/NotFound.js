@@ -7,7 +7,7 @@ class Welcome extends Component {
     return (
       <div className="App-content">
         <h3>The page you are looking for doesn't exist.<br /> Please go back to Start.</h3>
-        <Link to="/the-sign-on-consultation-process/"><Button raised primary className="btn">Start</Button></Link>
+        <Link to="/"><Button raised primary className="btn">Start</Button></Link>
       </div>
     );
   }

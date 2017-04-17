@@ -18,8 +18,8 @@ class EndUser extends Component {
     return (
       <div className="App-content">
         <h1>Is end user involved?</h1>
-        <Link to="/the-sign-on-consultation-process/is-strategic-oportunity"><Button raised primary data-enduser={true} className="btn" onTouchTap={this.setEndUserInvolved}>Yes</Button></Link>
-        <Link to="/the-sign-on-consultation-process/is-strategic-oportunity"><Button raised primary data-enduser={false} className="btn" onTouchTap={this.setEndUserInvolved}>No</Button></Link>
+        <Link to="/is-strategic-oportunity"><Button raised primary data-enduser={true} className="btn" onTouchTap={this.setEndUserInvolved}>Yes</Button></Link>
+        <Link to="/is-strategic-oportunity"><Button raised primary data-enduser={false} className="btn" onTouchTap={this.setEndUserInvolved}>No</Button></Link>
       </div>
     );
   }

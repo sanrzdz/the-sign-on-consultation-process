@@ -34,9 +34,9 @@ class Value extends Component {
         <h1>What is the value of the oportunity?</h1>
         <Layout container justify="center" align="stretch" gutter={0}>
           <Layout item sm={8} xs={10} >
-            <Link to="/the-sign-on-consultation-process/complexity-level"><Button raised primary data-level="high" className="btn full-width" onTouchTap={this.setValueLevel}>High</Button></Link>
-            <Link to="/the-sign-on-consultation-process/complexity-level"><Button raised primary data-level="medium" className="btn full-width" onTouchTap={this.setValueLevel}>Medium</Button></Link>
-            <Link to="/the-sign-on-consultation-process/complexity-level"><Button raised primary data-level="low" className="btn full-width" onTouchTap={this.setValueLevel}>Low</Button></Link>
+            <Link to="/complexity-level"><Button raised primary data-level="high" className="btn full-width" onTouchTap={this.setValueLevel}>High</Button></Link>
+            <Link to="/complexity-level"><Button raised primary data-level="medium" className="btn full-width" onTouchTap={this.setValueLevel}>Medium</Button></Link>
+            <Link to="/complexity-level"><Button raised primary data-level="low" className="btn full-width" onTouchTap={this.setValueLevel}>Low</Button></Link>
           </Layout>
         </Layout>  
       </div>

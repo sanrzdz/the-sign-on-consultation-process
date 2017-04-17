@@ -8,7 +8,7 @@ class Welcome extends Component {
     return (
       <div className="App-content">
         <h1>Welcome to Sysdoc Consultation Process</h1>
-        <Link to="/the-sign-on-consultation-process/end-user-involved"><Button raised primary className="btn">Start</Button></Link>
+        <Link to="/end-user-involved"><Button raised primary className="btn">Start</Button></Link>
       </div>
     );
   }
