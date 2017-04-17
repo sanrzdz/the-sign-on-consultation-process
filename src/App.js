@@ -97,24 +97,23 @@ class App extends Component {
                 <Header />
                 <Router>
                   <Switch>  
-                    <Route path="/" component={Welcome} />
-                    <Route path="/the-sign-on-consultation-process" component={Welcome} />
-                    <Route path="/end-user-involved" render={ () =>
+                    <Route path="the-sign-on-consultation-process/" component={Welcome} />
+                    <Route path="the-sign-on-consultation-process/end-user-involved" render={ () =>
                       <EndUser HandleEndUser={this.handleEndUserInvolved} />
                     } />
-                    <Route path="/is-strategic-oportunity" render={ () =>
+                    <Route path="the-sign-on-consultation-process/is-strategic-oportunity" render={ () =>
                       <Strategic HandleStrategic={this.handleStrategicOportunity} />
                     } />  
-                    <Route path="/value-level" render={ () =>
+                    <Route path="the-sign-on-consultation-process/value-level" render={ () =>
                       <Value HandleValue={this.handleValueLevel} />
                     } />  
-                    <Route path="/complexity-level" render={ () =>
+                    <Route path="the-sign-on-consultation-process/complexity-level" render={ () =>
                       <Complexity HandleComplexity={this.handleComplexityLevel} />
                     } />  
-                    <Route path="/roles-involved" render={ () =>
+                    <Route path="the-sign-on-consultation-process/roles-involved" render={ () =>
                       <Roles Role={this.getRoleInvolved()} Department={this.getDepartmentsInvolved()} Persons={PERSONS} />
                     } />  
-                    <Route path="/*" component={NotFound} />
+                    <Route path="the-sign-on-consultation-process/*" component={NotFound} />
                   </Switch>  
                 </Router>
                 <Footer />
