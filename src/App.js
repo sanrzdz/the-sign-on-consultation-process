@@ -98,6 +98,7 @@ class App extends Component {
                 <Router>
                   <Switch>
                     <Route exact path="/" component={Welcome} />
+                    <Route exact path="/the-sign-on-consultation-process/" component={Welcome} />
                     <Route path="/end-user-involved" render={ () =>
                       <EndUser HandleEndUser={this.handleEndUserInvolved} />
                     } />
