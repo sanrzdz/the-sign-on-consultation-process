@@ -95,10 +95,9 @@ class App extends Component {
             <Paper className="paper-wrapper">
               <div className="App">
                 <Header />
-                <Router>
+                <Router basename="/the-sign-on-consultation-process" >
                   <Switch>
                     <Route exact path="/" component={Welcome} />
-                    <Route exact path="/the-sign-on-consultation-process/" component={Welcome} />
                     <Route path="/end-user-involved" render={ () =>
                       <EndUser HandleEndUser={this.handleEndUserInvolved} />
                     } />
