@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 /* COMPONENTS */
 import Header from './components/Header';
@@ -35,18 +35,26 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      step: 0,
       endUser: false,
       strategic: false,
       value: 0,
       complexity: 0,
     };
 
+    this.handleStep                 = this.handleStep.bind(this);    
     this.handleEndUserInvolved      = this.handleEndUserInvolved.bind(this);    
     this.handleStrategicOportunity  = this.handleStrategicOportunity.bind(this);    
     this.handleValueLevel           = this.handleValueLevel.bind(this);    
     this.handleComplexityLevel      = this.handleComplexityLevel.bind(this);    
   }
 
+
+  handleStep(NextStep){
+    this.setState({
+      step: NextStep
+    });
+  }
   handleEndUserInvolved(EndUserInvolved){
     this.setState({
       endUser: EndUserInvolved
@@ -87,6 +95,30 @@ class App extends Component {
   
   render() {
     const appBarStyle = { position: 'relative', textAlign: 'center' };
+    var content
+    switch (this.state.step) {
+      case 0:
+        content = <Welcome HandleStep={this.handleStep} />
+        break;
+      case 1:
+        content = <EndUser HandleStep={this.handleStep} HandleEndUser={this.handleEndUserInvolved} />
+        break;
+      case 2:
+        content = <Strategic HandleStep={this.handleStep} HandleStrategic={this.handleStrategicOportunity} endUser={this.state.endUser} strategic={this.state.strategic}/>
+        break;
+      case 3:
+        content = <Value HandleStep={this.handleStep} HandleValue={this.handleValueLevel} endUser={this.state.endUser} strategic={this.state.strategic} />
+        break;
+      case 4:
+        content = <Complexity HandleStep={this.handleStep} HandleComplexity={this.handleComplexityLevel} />
+        break;   
+      case 5:
+        content = <Roles HandleStep={this.handleStep} Role={this.getRoleInvolved()} Department={this.getDepartmentsInvolved()} Persons={PERSONS} />
+        break;                                                                                                       
+      default:
+        content = <NotFound />                    
+        break;
+    }         
 
     return (
       <MuiThemeProvider>
@@ -95,27 +127,7 @@ class App extends Component {
             <Paper className="paper-wrapper">
               <div className="App">
                 <Header />
-                <Router basename="/the-sign-on-consultation-process" >
-                  <Switch>
-                    <Route exact path="/" component={Welcome} />
-                    <Route path="/end-user-involved" render={ () =>
-                      <EndUser HandleEndUser={this.handleEndUserInvolved} />
-                    } />
-                    <Route path="/is-strategic-oportunity" render={ () =>
-                      <Strategic HandleStrategic={this.handleStrategicOportunity} />
-                    } />  
-                    <Route path="/value-level" render={ () =>
-                      <Value HandleValue={this.handleValueLevel} />
-                    } />  
-                    <Route path="/complexity-level" render={ () =>
-                      <Complexity HandleComplexity={this.handleComplexityLevel} />
-                    } />  
-                    <Route path="/roles-involved" render={ () =>
-                      <Roles Role={this.getRoleInvolved()} Department={this.getDepartmentsInvolved()} Persons={PERSONS} />
-                    } />  
-                    <Route path="/*" component={NotFound} />
-                  </Switch>  
-                </Router>
+                {content}                           
                 <Footer />
               </div>  
             </Paper>

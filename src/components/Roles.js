@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { List, ListItem, ListItemIcon, ListItemText, ListSubheader } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
@@ -9,7 +8,16 @@ import Layout from 'material-ui/Layout';
 import Chip from 'material-ui/Chip';
 
 class Roles extends Component {
-  
+  constructor(props){
+    super(props);
+
+    this.setNextStep = this.setNextStep.bind(this);
+  }
+
+  setNextStep(){
+    this.props.HandleStep(0);
+  }
+
   render() {
     var roles = [];
     var brandPersons = [];
@@ -26,7 +34,7 @@ class Roles extends Component {
     this.props.Persons.forEach((person) => {
       if ((this.props.Department.indexOf('Brand') !== -1) && (person.Department.indexOf('Brand') !== -1) && (person.Role === this.props.Role)) {
         brandPersons.push(
-          <ListItem  gutter={0} key={person.Name}>
+          <ListItem key={person.Name}>
             <ListItemIcon>
                <Avatar className="big-avatar"><AccountCircle /></Avatar>
             </ListItemIcon>
@@ -76,7 +84,7 @@ class Roles extends Component {
           </Layout>
         </Layout>
     
-        <Link to="/"><Button raised primary className="btn">Back to Start</Button></Link>
+        <Button raised primary className="btn" onTouchTap={this.setNextStep}>Back to Start</Button>
       </div>
     );
   }
